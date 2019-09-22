@@ -14,4 +14,8 @@ export class PushService {
     // TODO: Move API URL into config.
     return this.http.get('http://localhost:4600/subscriptions');
   }
+
+  sendNotification(id, title) {
+    return this.http.get(`http://localhost:4600/notifications?id=${id}&title=${title}`);
+  }
 }
