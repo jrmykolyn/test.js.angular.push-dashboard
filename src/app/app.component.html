@@ -1,9 +1,18 @@
-<form (submit)="handleSubmit($event)">
-  <select name="id">
-    <option *ngFor="let subscription of (subscriptions$ | async)">
-    {{ subscription.id }}
-    </option>
-  </select>
-  <input type="text" name="title" />
-  <input type="submit" value="Send" />
-</form>
+<main>
+  <form (submit)="handleSubmit($event)">
+    <div>
+      <select name="id">
+        <option *ngFor="let subscription of (subscriptions$ | async)">
+        {{ subscription.id }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="title">Notification Title</label>
+      <input type="text" id="title" name="title" />
+    </div>
+    <div>
+      <input type="submit" value="Send Notification" />
+    </div>
+  </form>
+</main>
