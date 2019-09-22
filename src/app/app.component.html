@@ -1,11 +1,9 @@
-<ul>
-  <li *ngFor="let subscription of (subscriptions$ | async)">
+<form (submit)="handleSubmit($event)">
+  <select name="id">
+    <option *ngFor="let subscription of (subscriptions$ | async)">
     {{ subscription.id }}
-  </li>
-</ul>
-<!--
-// TODO:
-- Wrap subscription IDs in <select>.
-- Add text area.
-- Add submit CTA and logic.
--->
+    </option>
+  </select>
+  <input type="text" name="title" />
+  <input type="submit" value="Send" />
+</form>

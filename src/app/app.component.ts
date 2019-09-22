@@ -13,4 +13,16 @@ export class AppComponent {
   constructor(
     private pushService: PushService
   ) {}
+
+  handleSubmit(event) {
+    event.preventDefault();
+    // TODO: This... better.
+    const id = event.target.querySelector('select').value;
+    const title = event.target.querySelector('input[name="title"]').value;
+
+    this.pushService.sendNotification(id, title)
+      .subscribe((response) => {
+        console.log('__ LOGGING OUT `response`', response);
+      });
+  }
 }
