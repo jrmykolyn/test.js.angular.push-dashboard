@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PushService } from './services/push/push.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test.js.angular.push-dashboard';
+  subscriptions$ = this.pushService.getSubscriptions();
+
+  constructor(
+    private pushService: PushService
+  ) {}
 }
