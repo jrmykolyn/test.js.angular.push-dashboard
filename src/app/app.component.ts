@@ -19,8 +19,9 @@ export class AppComponent {
     // TODO: This... better.
     const id = event.target.querySelector('select').value;
     const title = event.target.querySelector('input[name="title"]').value;
+    const body = event.target.querySelector('textarea').value;
 
-    this.pushService.sendNotification(id, title)
+    this.pushService.sendNotification(id, title, { body })
       .subscribe((response) => {
         console.log('__ LOGGING OUT `response`', response);
       });

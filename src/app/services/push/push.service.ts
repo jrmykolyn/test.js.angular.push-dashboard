@@ -15,11 +15,12 @@ export class PushService {
     return this.http.get('http://localhost:4600/subscriptions');
   }
 
-  sendNotification(id, title) {
+  sendNotification(id, title, options = {}) {
     return this.http.post('http://localhost:4600/notifications', {
       payload: {
         id,
-        title
+        title,
+        options,
       },
     });
   }
