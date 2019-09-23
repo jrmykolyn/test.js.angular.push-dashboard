@@ -20,8 +20,10 @@ export class AppComponent {
     const id = event.target.querySelector('select').value;
     const title = event.target.querySelector('input[name="title"]').value;
     const body = event.target.querySelector('textarea').value;
+    const requireInteraction =
+      event.target.querySelector('input[name="requireInteraction"]').checked;
 
-    this.pushService.sendNotification(id, title, { body })
+    this.pushService.sendNotification(id, title, { body, requireInteraction })
       .subscribe((response) => {
         console.log('__ LOGGING OUT `response`', response);
       });
