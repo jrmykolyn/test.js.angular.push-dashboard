@@ -47,14 +47,22 @@ label {
 }
 
 select,
-input {
+input,
+textarea {
   width: 100%;
 }
 
-input {
+input,
+textarea {
   padding: 0 1.5rem;
+  border: solid 0.1rem #ddd;
   font-size: 1.8rem;
   line-height: 4.4rem;
+}
+
+textarea {
+  padding: 1.5rem;
+  line-height: 1.6;
 }
 
 input[type="submit"] {
